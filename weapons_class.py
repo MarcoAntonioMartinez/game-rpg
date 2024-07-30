@@ -12,19 +12,6 @@ class Weapons:
         #  two handed? should also have shield somewhere      
         self.weapon_type = weapon_type
         
-        
+        # how rare is it? can it be found in chests? enemy drops? given as reward?
         self.weapon_rarity = weapon_rarity
-
-
-
-
-# 
-# weaponDmg
-
-# 
-# weaponType
-
-# #how rare is it? can it be found in chests? enemy drops? given as reward?
-# weaponRarity
-  
 
