@@ -1,0 +1,3 @@
+Old Rusty Knife,10,Melee,1
+Wooden Staff,5,Magic,1
+Wooden Bow,10,Range,1
