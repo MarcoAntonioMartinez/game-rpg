@@ -5,3 +5,9 @@
 
 
 #other stuff to add here
+
+#have the intro here
+
+#ask what class
+#like Choose your class 1. Warrior 2. Mage ... etc.
+
