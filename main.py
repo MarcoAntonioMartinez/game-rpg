@@ -1,5 +1,3 @@
-main.py
-
 from character_classes import (Necromancer, Bard, Warrior, Thief, Mage, Paladin, Archer, Priest, MartialArtist)
 
 def main():
@@ -40,12 +38,19 @@ def main():
             print("Invalid choice, creating default Warrior.")
             return Warrior()
 
+    # Function to format and display the character's stats
+    def display_stats(character):
+        stats = character.display_stats()
+        print(f"\n--- {stats['Job']} ---")
+        print(f"Level: {stats['Level']}")
+        for stat, value in stats['Stats'].items():
+            print(f"{stat.capitalize()}: {value}")
+    
     # Create a character based on user input
     character = create_character()
     
     while True:
-        print("\nCurrent Stats:")
-        print(character.display_stats())
+        display_stats(character)
         
         print("\nOptions:")
         print("1. Increase Stat")
@@ -56,21 +61,22 @@ def main():
         option = input("Enter the number of your choice: ")
         
         if option == '1':
-            try:
-                amount = int(input("Enter the amount to increase: "))
-                character.increase_stat(amount)
-            except ValueError:
-                print("Please enter a valid number.")
+            while True:
+                try:
+                    amount = int(input("Enter the amount to increase: "))
+                    character.increase_stat(amount)
+                    break  # Exit the stat increase loop if successful
+                except ValueError:
+                    print("Please enter a valid number.")
         
         elif option == '2':
             character.level_up()
         
         elif option == '3':
-            print("\nCurrent Stats:")
-            print(character.display_stats())
+            display_stats(character)
         
         elif option == '4':
-            print("Exiting...")
+            print("Thank you for playing! Exiting the game...")
             break
         
         else:
@@ -78,4 +84,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

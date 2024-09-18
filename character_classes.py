@@ -1,5 +1,3 @@
-#character_classes.py
-
 class Character:
     def __init__(self, job_name, hp, defense, evasion, strength, speed, mana):
         self.job_name = job_name
@@ -33,9 +31,19 @@ class Character:
             print("Invalid stat choice!")
 
     def level_up(self):
+     if self.level < 100:
         self.level += 1
         self.points_allocated_this_level = 0
         print(f"Level up! You are now at level {self.level}.")
+     else:
+        print("You have reached the maximum level of 100.")
+
+
+    def increase_level(self):
+        self.level += 1
+
+    def reset_points(self):
+        self.points_allocated_this_level = 0
 
     def display_stats(self):
         return {
